@@ -20,6 +20,13 @@ public class Library {
         return books.size();
     }
 
+    public Book findBookByTitle(String title) {
+        var maybeBook = books.stream()
+                .filter(b -> b.getTitle().equalsIgnoreCase(title))
+                .findFirst();
+        return maybeBook.orElse(null);
+    }
+
     public Library(String name) {
         this.name = name;
         this.books = new ArrayList<>();

@@ -24,4 +24,14 @@ void main() {
 
     System.out.printf("%nAntal bøger: %d%n%n", library.getNumberOfBooks());
     library.printBooks();
+
+    System.out.printf("%s%n%n", "-".repeat(20));
+
+    Book foundBook = library.findBookByTitle("the hobbit");
+
+    if (foundBook != null) {
+        foundBook.printInfo();
+    } else {
+        System.out.println("Bogen blev ikke fundet.");
+    }
 }
