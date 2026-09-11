@@ -16,6 +16,10 @@ public class Library {
         }
     }
 
+    public int getNumberOfBooks() {
+        return books.size();
+    }
+
     public Library(String name) {
         this.name = name;
         this.books = new ArrayList<>();

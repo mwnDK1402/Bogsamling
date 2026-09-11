@@ -22,6 +22,6 @@ void main() {
     library.addBooks(books);
     library.addBooks(classicBook, nonClassicBook);
 
-    System.out.println();
+    System.out.printf("%nAntal bøger: %d%n%n", library.getNumberOfBooks());
     library.printBooks();
 }
