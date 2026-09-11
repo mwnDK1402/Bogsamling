@@ -22,6 +22,10 @@ public final class Library {
         return books.size();
     }
 
+    public int getNumberOfReadBooks() throws ArithmeticException {
+        return Math.toIntExact(books.stream().filter(Book::getRead).count());
+    }
+
     public Book findBookByTitle(String title) {
         var maybeBook = books.stream()
                 .filter(b -> b.title.equalsIgnoreCase(title))
