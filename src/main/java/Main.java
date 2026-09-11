@@ -4,4 +4,9 @@ void main() {
             new Book("Harry Potter og De Vises Sten", "J.K. Rowling", 1997),
             new Book("1984", "George Orwell", 1949),
     };
+
+    for (var book : books) {
+        book.printInfo();
+        System.out.println();
+    }
 }
