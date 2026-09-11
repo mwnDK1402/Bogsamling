@@ -15,7 +15,7 @@ public final class Book {
         this.genres = List.of(genres);
     }
 
-    public boolean getRead() {
+    public boolean isRead() {
         return read;
     }
 

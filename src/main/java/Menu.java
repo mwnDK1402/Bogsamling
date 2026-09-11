@@ -23,7 +23,7 @@ public final class Menu {
             while (true) {
                 System.out.print("Valg: ");
                 var choice = in.nextInt();
-                in.skip(System.lineSeparator());
+                in.nextLine();
 
                 switch (choice) {
                     case 1 -> addBook();
@@ -47,7 +47,7 @@ public final class Menu {
         var author = in.nextLine();
         System.out.print("Udgivelsesår: ");
         var publicationYear = in.nextInt();
-        in.skip(System.lineSeparator());
+        in.nextLine();
 
         var validGenres = Arrays.stream(Genre.values()).map(Enum::name).collect(Collectors.toUnmodifiableSet());
 

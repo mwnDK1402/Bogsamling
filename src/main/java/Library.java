@@ -15,15 +15,15 @@ public final class Library {
     }
 
     public List<Book> getBooks() {
-        return books;
+        return List.copyOf(books);
     }
 
     public int getNumberOfBooks() {
         return books.size();
     }
 
-    public int getNumberOfReadBooks() throws ArithmeticException {
-        return Math.toIntExact(books.stream().filter(Book::getRead).count());
+    public int getNumberOfReadBooks() {
+        return Math.toIntExact(books.stream().filter(Book::isRead).count());
     }
 
     public Book findBookByTitle(String title) {
@@ -45,7 +45,7 @@ public final class Library {
     }
 
     public void printUnreadBooks() {
-        books.stream().filter(b -> !b.getRead()).forEach(b -> {
+        books.stream().filter(b -> !b.isRead()).forEach(b -> {
             b.printInfo();
             System.out.println();
         });
