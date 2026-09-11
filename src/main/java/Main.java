@@ -1,3 +1,3 @@
 void main() {
-    
+    Book book = new Book("The Hobbit", "J.R.R. Tolkien", 1937);
 }
