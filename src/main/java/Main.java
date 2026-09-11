@@ -1,6 +1,15 @@
 public static final int BAR_WIDTH = 20;
 
-void main() {
+void main(String[] args) {
+    if (Arrays.stream(args).noneMatch(a -> a.equalsIgnoreCase("non-interactive"))) {
+        new Menu().run();
+    } else {
+        nonInteractive();
+    }
+}
+
+
+private void nonInteractive() {
     Book[] books = {
             new Book("The Hobbit", "J.R.R. Tolkien", 1937, Genre.CHILDRENS_FANTASY, Genre.CHILDRENS_ADVENTURE, Genre.MYTHICAL_CREATURES, Genre.CANON, Genre.BOOK_TO_SCREEN, Genre.FICTION),
             new Book("Harry Potter og De Vises Sten", "J.K. Rowling", 1997, Genre.HARRY_POTTER, Genre.CHILDRENS_FANTASY, Genre.CHILDRENS_ADVENTURE, Genre.WITCHCRAFT, Genre.BOOK_TO_SCREEN, Genre.CHOSEN_FAMILY, Genre.CANON),
