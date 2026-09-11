@@ -10,11 +10,6 @@ void main() {
     books[2].markAsRead();
     books[2].markAsUnread(); // should be unread
 
-    for (var book : books) {
-        book.printInfo();
-        System.out.println();
-    }
-
     Book classicBook = new Book("Harry Potter and the Half-Blood Prince",
             "J.K. Rowling", 2005);
     Book nonClassicBook = new Book("The God Delusion: A Study of Religious Belief and Skepticism",
@@ -26,4 +21,7 @@ void main() {
     Library library = new Library("Min bogsamling");
     library.addBooks(books);
     library.addBooks(classicBook, nonClassicBook);
+
+    System.out.println();
+    library.printBooks();
 }

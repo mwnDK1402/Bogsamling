@@ -9,6 +9,13 @@ public class Library {
         this.books.addAll(List.of(books));
     }
 
+    public void printBooks() {
+        for (var book : books) {
+            book.printInfo();
+            System.out.println();
+        }
+    }
+
     public Library(String name) {
         this.name = name;
         this.books = new ArrayList<>();
