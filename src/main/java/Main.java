@@ -38,4 +38,9 @@ void main() {
 
     System.out.printf("%n%s%n%n", "-".repeat(barWidth));
     library.printUnreadBooks();
+
+    System.out.printf("%s%n%n", "-".repeat(barWidth));
+    if (library.removeBookByTitle("the god delusion: a study of religious belief and skepticism")) {
+        System.out.println("'The God Delusion' blev fjernet fra biblioteket.");
+    }
 }

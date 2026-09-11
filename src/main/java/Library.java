@@ -34,6 +34,10 @@ public class Library {
         });
     }
 
+    public boolean removeBookByTitle(String title) {
+        return books.removeIf(b -> b.getTitle().equalsIgnoreCase(title));
+    }
+
     public Library(String name) {
         this.name = name;
         this.books = new ArrayList<>();
