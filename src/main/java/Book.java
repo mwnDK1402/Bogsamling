@@ -1,8 +1,10 @@
+import java.util.List;
+
 public final class Book {
     public final String title;
     public final String author;
     public final int publicationYear;
-    public final Genre[] genres;
+    public final List<Genre> genres;
 
     private boolean read = false;
 
@@ -10,7 +12,7 @@ public final class Book {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
-        this.genres = genres;
+        this.genres = List.of(genres);
     }
 
     public boolean getRead() {
