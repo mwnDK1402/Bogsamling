@@ -27,6 +27,13 @@ public class Library {
         return maybeBook.orElse(null);
     }
 
+    public void printUnreadBooks() {
+        books.stream().filter(b -> !b.getRead()).forEach(b -> {
+            b.printInfo();
+            System.out.println();
+        });
+    }
+
     public Library(String name) {
         this.name = name;
         this.books = new ArrayList<>();

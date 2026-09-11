@@ -17,6 +17,10 @@ public class Book {
         return publicationYear;
     }
 
+    public boolean getRead() {
+        return read;
+    }
+
     public void markAsRead() {
         read = true;
     }

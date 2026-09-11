@@ -25,7 +25,8 @@ void main() {
     System.out.printf("%nAntal bøger: %d%n%n", library.getNumberOfBooks());
     library.printBooks();
 
-    System.out.printf("%s%n%n", "-".repeat(20));
+    int barWidth = 20;
+    System.out.printf("%s%n%n", "-".repeat(barWidth));
 
     Book foundBook = library.findBookByTitle("the hobbit");
 
@@ -34,4 +35,7 @@ void main() {
     } else {
         System.out.println("Bogen blev ikke fundet.");
     }
+
+    System.out.printf("%n%s%n%n", "-".repeat(barWidth));
+    library.printUnreadBooks();
 }
