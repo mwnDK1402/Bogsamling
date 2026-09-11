@@ -1,19 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
-    private String name;
-    private ArrayList<Book> books;
+public final class Library {
+    public final String name;
+    private final ArrayList<Book> books;
+
+    public Library(String name) {
+        this.name = name;
+        this.books = new ArrayList<>();
+    }
 
     public void addBooks(Book... books) {
         this.books.addAll(List.of(books));
     }
 
-    public void printBooks() {
-        for (var book : books) {
-            book.printInfo();
-            System.out.println();
-        }
+    public List<Book> getBooks() {
+        return books;
     }
 
     public int getNumberOfBooks() {
@@ -27,19 +29,21 @@ public class Library {
         return maybeBook.orElse(null);
     }
 
+    public boolean removeBookByTitle(String title) {
+        return books.removeIf(b -> b.title.equalsIgnoreCase(title));
+    }
+
+    public void printBooks() {
+        for (var book : books) {
+            book.printInfo();
+            System.out.println();
+        }
+    }
+
     public void printUnreadBooks() {
         books.stream().filter(b -> !b.getRead()).forEach(b -> {
             b.printInfo();
             System.out.println();
         });
-    }
-
-    public boolean removeBookByTitle(String title) {
-        return books.removeIf(b -> b.title.equalsIgnoreCase(title));
-    }
-
-    public Library(String name) {
-        this.name = name;
-        this.books = new ArrayList<>();
     }
 }
