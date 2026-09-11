@@ -14,4 +14,12 @@ void main() {
         book.printInfo();
         System.out.println();
     }
+
+    Book classicBook = new Book("Harry Potter and the Half-Blood Prince",
+            "J.K. Rowling", 2005);
+    Book nonClassicBook = new Book("The God Delusion: A Study of Religious Belief and Skepticism",
+            "Richard Dawkins", 2006);
+
+    System.out.printf("'%s' is %s%n", classicBook.getTitle(), classicBook.isClassic(2026) ? "a classic" : "not a classic");
+    System.out.printf("'%s' is %s%n", nonClassicBook.getTitle(), nonClassicBook.isClassic(2026) ? "a classic" : "not a classic");
 }

@@ -25,6 +25,10 @@ public class Book {
         read = false;
     }
 
+    public boolean isClassic(int currentYear) {
+        return currentYear > publicationYear + 20;
+    }
+
     public void printInfo() {
         System.out.printf("Titel: %s%nForfatter: %s%nUdgivelsesår: %d%nLæst: %s%n",
                 title, author, publicationYear, read ? "ja" : "nej");
