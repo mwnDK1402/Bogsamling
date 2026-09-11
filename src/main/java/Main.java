@@ -15,8 +15,8 @@ void main() {
     Book nonClassicBook = new Book("The God Delusion: A Study of Religious Belief and Skepticism",
             "Richard Dawkins", 2006, Genre.NON_FICTION, Genre.SCIENCE_NATURE, Genre.SPIRITUALITY, Genre.HISTORY_AND_POLITICS);
 
-    System.out.printf("'%s' is %s%n", classicBook.getTitle(), classicBook.isClassic(2026) ? "a classic" : "not a classic");
-    System.out.printf("'%s' is %s%n", nonClassicBook.getTitle(), nonClassicBook.isClassic(2026) ? "a classic" : "not a classic");
+    System.out.printf("'%s' is %s%n", classicBook.title, classicBook.isClassic(2026) ? "a classic" : "not a classic");
+    System.out.printf("'%s' is %s%n", nonClassicBook.title, nonClassicBook.isClassic(2026) ? "a classic" : "not a classic");
 
     Library library = new Library("Min bogsamling");
     library.addBooks(books);

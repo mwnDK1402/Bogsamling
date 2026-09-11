@@ -22,7 +22,7 @@ public class Library {
 
     public Book findBookByTitle(String title) {
         var maybeBook = books.stream()
-                .filter(b -> b.getTitle().equalsIgnoreCase(title))
+                .filter(b -> b.title.equalsIgnoreCase(title))
                 .findFirst();
         return maybeBook.orElse(null);
     }
@@ -35,7 +35,7 @@ public class Library {
     }
 
     public boolean removeBookByTitle(String title) {
-        return books.removeIf(b -> b.getTitle().equalsIgnoreCase(title));
+        return books.removeIf(b -> b.title.equalsIgnoreCase(title));
     }
 
     public Library(String name) {

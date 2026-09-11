@@ -1,21 +1,16 @@
-public class Book {
-    private String title;
-    private String author;
-    private int publicationYear;
-    private Genre[] genres;
+public final class Book {
+    public final String title;
+    public final String author;
+    public final int publicationYear;
+    public final Genre[] genres;
 
     private boolean read = false;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getPublicationYear() {
-        return publicationYear;
+    public Book(String title, String author, int publicationYear, Genre... genres) {
+        this.title = title;
+        this.author = author;
+        this.publicationYear = publicationYear;
+        this.genres = genres;
     }
 
     public boolean getRead() {
@@ -40,12 +35,5 @@ public class Book {
         for (var genre : genres) {
             System.out.printf("- %s%n", genre.name());
         }
-    }
-
-    public Book(String title, String author, int publicationYear, Genre... genres) {
-        this.title = title;
-        this.author = author;
-        this.publicationYear = publicationYear;
-        this.genres = genres;
     }
 }
