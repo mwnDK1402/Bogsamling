@@ -43,4 +43,8 @@ void main() {
     if (library.removeBookByTitle("the god delusion: a study of religious belief and skepticism")) {
         System.out.println("'The God Delusion' blev fjernet fra biblioteket.");
     }
+
+    System.out.printf("%n%s%n%n", "-".repeat(barWidth));
+    System.out.println("=== Books by J.K. Rowling ===");
+    library.printBooksByAuthor("J.K. Rowling");
 }

@@ -46,4 +46,11 @@ public final class Library {
             System.out.println();
         });
     }
+
+    public void printBooksByAuthor(String author) {
+        books.stream().filter(b -> b.author.equalsIgnoreCase(author)).forEach(b -> {
+            b.printInfo();
+            System.out.println();
+        });
+    }
 }
