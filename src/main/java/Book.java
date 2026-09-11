@@ -2,7 +2,7 @@ public class Book {
     private String title;
     private String author;
     private int publicationYear;
-    private String genre;
+    private Genre[] genres;
 
     private boolean read = false;
 
@@ -35,14 +35,17 @@ public class Book {
     }
 
     public void printInfo() {
-        System.out.printf("Titel: %s%nForfatter: %s%nUdgivelsesår: %d%nGenre: %s%nLæst: %s%n",
-                title, author, publicationYear, genre, read ? "ja" : "nej");
+        System.out.printf("Titel: %s%nForfatter: %s%nUdgivelsesår: %d%nLæst: %s%nGenres:%n",
+                title, author, publicationYear, read ? "ja" : "nej");
+        for (var genre : genres) {
+            System.out.printf("- %s%n", genre.name());
+        }
     }
 
-    public Book(String title, String author, int publicationYear, String genre) {
+    public Book(String title, String author, int publicationYear, Genre... genres) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
-        this.genre = genre;
+        this.genres = genres;
     }
 }

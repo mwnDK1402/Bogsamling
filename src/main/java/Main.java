@@ -1,8 +1,8 @@
 void main() {
     Book[] books = {
-            new Book("The Hobbit", "J.R.R. Tolkien", 1937, "Fantasy"),
-            new Book("Harry Potter og De Vises Sten", "J.K. Rowling", 1997, "Fantasy"),
-            new Book("1984", "George Orwell", 1949, "Science Fiction"),
+            new Book("The Hobbit", "J.R.R. Tolkien", 1937, Genre.CHILDRENS_FANTASY, Genre.CHILDRENS_ADVENTURE, Genre.MYTHICAL_CREATURES, Genre.CANON, Genre.BOOK_TO_SCREEN, Genre.FICTION),
+            new Book("Harry Potter og De Vises Sten", "J.K. Rowling", 1997, Genre.HARRY_POTTER, Genre.CHILDRENS_FANTASY, Genre.CHILDRENS_ADVENTURE, Genre.WITCHCRAFT, Genre.BOOK_TO_SCREEN, Genre.CHOSEN_FAMILY, Genre.CANON),
+            new Book("1984", "George Orwell", 1949, Genre.FICTION, Genre.POLITICAL_THRILLER, Genre.SCIENCE_FICTION_FANTASY, Genre.DYSTOPIAN_YOUNG_ADULT),
     };
 
     books[0].markAsUnread(); // should be unread
@@ -11,9 +11,9 @@ void main() {
     books[2].markAsUnread(); // should be unread
 
     Book classicBook = new Book("Harry Potter and the Half-Blood Prince",
-            "J.K. Rowling", 2005, "Fantasy");
+            "J.K. Rowling", 2005, Genre.HARRY_POTTER, Genre.CHILDRENS_FANTASY, Genre.CHILDRENS_ADVENTURE, Genre.WITCHCRAFT, Genre.BOOK_TO_SCREEN, Genre.CHOSEN_FAMILY, Genre.CANON);
     Book nonClassicBook = new Book("The God Delusion: A Study of Religious Belief and Skepticism",
-            "Richard Dawkins", 2006, "Religion");
+            "Richard Dawkins", 2006, Genre.NON_FICTION, Genre.SCIENCE_NATURE, Genre.SPIRITUALITY, Genre.HISTORY_AND_POLITICS);
 
     System.out.printf("'%s' is %s%n", classicBook.getTitle(), classicBook.isClassic(2026) ? "a classic" : "not a classic");
     System.out.printf("'%s' is %s%n", nonClassicBook.getTitle(), nonClassicBook.isClassic(2026) ? "a classic" : "not a classic");
