@@ -24,4 +24,6 @@ void main() {
     System.out.printf("'%s' is %s%n", nonClassicBook.getTitle(), nonClassicBook.isClassic(2026) ? "a classic" : "not a classic");
 
     Library library = new Library("Min bogsamling");
+    library.addBooks(books);
+    library.addBooks(classicBook, nonClassicBook);
 }
